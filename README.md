@@ -32,49 +32,79 @@ sudo apt-get install software-properties-common
 
 # Wkhtmltopdf
 cd /tmp
+
 wget https://builds.wkhtmltopdf.org/0.12.1.3/wkhtmltox_0.12.1.3-1~bionic_amd64.deb
+
 sudo apt install ./wkhtmltox_0.12.1.3-1~bionic_amd64.deb
+
 sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
+
 sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
+
 
 
 # Odoo
 cd /opt/odoo
+
 sudo git clone --depth 1 --branch 12.0 https://www.github.com/odoo/odoo /opt/odoo/odoo-server/
+
 cd /opt/odoo/odoo-server
+
 sudo pip3 install -r requirements.txt
 
 sudo mkdir /var/log/odoo
+
 cd /var/log/odoo
+
 sudo touch odoo-server.log
+
 sudo chown -R odoo:root /var/log/odoo
+
 sudo chown -R odoo:odoo /opt/odoo/*
+
 sudo nano /etc/odoo-server.conf
 
 
 # Gdata
 cd /opt/odoo
+
 sudo wget https://pypi.python.org/packages/a8/70/bd554151443fe9e89d9a934a7891aaffc63b9cb5c7d608972919a002c03c/gdata-2.0.18.tar.gz
+
 sudo tar zxvf gdata-2.0.18.tar.gz
+
 sudo chown -R odoo: gdata-2.0.18
+
 sudo -s
+
 cd gdata-2.0.18/
+
 python setup.py install
+
 exit
 
 
 
 # conteudo arquivo .conf
 [options]
+
 ;This is the password that allows database operations:
+
 admin_passwd = odoo123456
+
 db_host = False
+
 db_port = False
+
 db_user = odoo
+
 db_password = False
+
 xmlrpc_port = 8069
+
 logfile = /var/log/odoo/odoo-server.log
+
 addons_path = /opt/odoo/odoo-server/addons
+
 # fim conteudo arquivo .conf
 
 
@@ -85,10 +115,13 @@ sudo chmod 640 /etc/odoo-server.conf
 
 
 # POSTGRES
+
 sudo apt-get install python3-software-properties
+
 sudo vim /etc/apt/sources.list.d/pgdg.list
 
-Add a line for the repository
+Add a line for the repository: 
+
 deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main
 
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
