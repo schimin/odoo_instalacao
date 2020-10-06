@@ -112,9 +112,14 @@ createuser -s roberto
 exit
 
 
+
 # Iniciar Odoo
+
 cd /opt/odoo/odoo
+
 ./odoo-bin
+
+
 
 # TROUBLESHOOTING
 
