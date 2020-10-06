@@ -29,12 +29,14 @@ sudo python3 -m pip install libsass
 
 sudo apt-get install software-properties-common
 
+
 # Wkhtmltopdf
 cd /tmp
 wget https://builds.wkhtmltopdf.org/0.12.1.3/wkhtmltox_0.12.1.3-1~bionic_amd64.deb
 sudo apt install ./wkhtmltox_0.12.1.3-1~bionic_amd64.deb
 sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
 sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
+
 
 # Odoo
 cd /opt/odoo
@@ -49,6 +51,7 @@ sudo chown -R odoo:root /var/log/odoo
 sudo chown -R odoo:odoo /opt/odoo/*
 sudo nano /etc/odoo-server.conf
 
+
 # Gdata
 cd /opt/odoo
 sudo wget https://pypi.python.org/packages/a8/70/bd554151443fe9e89d9a934a7891aaffc63b9cb5c7d608972919a002c03c/gdata-2.0.18.tar.gz
@@ -58,6 +61,7 @@ sudo -s
 cd gdata-2.0.18/
 python setup.py install
 exit
+
 
 
 # conteudo arquivo .conf
@@ -73,8 +77,12 @@ logfile = /var/log/odoo/odoo-server.log
 addons_path = /opt/odoo/odoo-server/addons
 # fim conteudo arquivo .conf
 
+
 sudo chown odoo: /etc/odoo-server.conf
+
 sudo chmod 640 /etc/odoo-server.conf
+
+
 
 # POSTGRES
 sudo apt-get install python3-software-properties
@@ -84,15 +92,23 @@ Add a line for the repository
 deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main
 
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
 sudo apt-get update
+
 sudo apt-get install postgresql-9.6
+
+
 
 # Criar Databse usuario
 
 sudo su postgres
+
 cd
+
 createuser -s odoo
+
 createuser -s roberto
+
 exit
 
 
