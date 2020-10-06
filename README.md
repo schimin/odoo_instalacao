@@ -1,7 +1,9 @@
 # odoo_instalacao 12
 
 
+```sh
 sudo passwd root
+```
 
 
 # Preparação do Linux
