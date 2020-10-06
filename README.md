@@ -150,7 +150,7 @@ exit
 
 cd /opt/odoo/odoo
 
-./odoo-bin
+./odoo-bin --config=odoo.conf
 
 
 
@@ -162,3 +162,4 @@ sudo apt-get -f install libxrender1 libjpeg-turbo8 libfontconfig1 fonts-dejavu-c
 
 
 Fonte: http://www.comdesk.com.br/blog/10-instalacao-odoo-v12-no-ubuntu-18-04
+Fonte: https://www.systemsvalley.com/odoo-12-installation-on-ubuntu-18-04/
