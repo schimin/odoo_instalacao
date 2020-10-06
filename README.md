@@ -37,7 +37,6 @@ sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
 sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
 
 # Odoo
-
 cd /opt/odoo
 sudo git clone --depth 1 --branch 12.0 https://www.github.com/odoo/odoo /opt/odoo/odoo-server/
 cd /opt/odoo/odoo-server
@@ -49,6 +48,17 @@ sudo touch odoo-server.log
 sudo chown -R odoo:root /var/log/odoo
 sudo chown -R odoo:odoo /opt/odoo/*
 sudo nano /etc/odoo-server.conf
+
+# Gdata
+cd /opt/odoo
+sudo wget https://pypi.python.org/packages/a8/70/bd554151443fe9e89d9a934a7891aaffc63b9cb5c7d608972919a002c03c/gdata-2.0.18.tar.gz
+sudo tar zxvf gdata-2.0.18.tar.gz
+sudo chown -R odoo: gdata-2.0.18
+sudo -s
+cd gdata-2.0.18/
+python setup.py install
+exit
+
 
 # conteudo arquivo .conf
 [options]
@@ -67,6 +77,34 @@ sudo chown odoo: /etc/odoo-server.conf
 sudo chmod 640 /etc/odoo-server.conf
 
 # POSTGRES
+sudo apt-get install python3-software-properties
+sudo vim /etc/apt/sources.list.d/pgdg.list
+
+Add a line for the repository
+deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main
+
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install postgresql-9.6
+
+# Criar Databse usuario
+
+sudo su postgres
+cd
+createuser -s odoo
+createuser -s roberto
+exit
+
+
+# Iniciar Odoo
+cd /opt/odoo/odoo
+./odoo-bin
+
+# TROUBLESHOOTING
+
+Any error related to libfontconfig, libxrender not found then:
+
+sudo apt-get -f install libxrender1 libjpeg-turbo8 libfontconfig1 fonts-dejavu-core ttf-bitstream-vera fonts-freefont-ttf gsfonts libfontenc1 libxfont1 x11-common xfonts-encodings xfonts-utils gsfonts-x11 fontconfig-config libfontconfig1 fontconfig
 
 
 Fonte: http://www.comdesk.com.br/blog/10-instalacao-odoo-v12-no-ubuntu-18-04
