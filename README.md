@@ -12,7 +12,7 @@ sudo passwd root
 sudo apt update && sudo apt upgrade
 
 sudo apt install git gcc python3-pip build-essential python3-dev python3-venv python3-wheel libxslt-dev libzip-dev libpq-dev libldap2-dev libsasl2-dev python3-setuptools python3-pypdf2
-```
+
 
 pip3 install Babel decorator docutils ebaysdk feedparser gevent greenlet html2text Jinja2 lxml Mako MarkupSafe mock num2words ofxparse passlib Pillow psutil psycogreen psycopg2 pydot pyparsing PyPDF2 pyserial python-dateutil python-openid pytz pyusb PyYAML qrcode reportlab requests six suds-jurko vatnumber vobject Werkzeug XlsxWriter xlwt xlrd
 
@@ -33,9 +33,10 @@ sudo apt-get install node-less
 sudo python3 -m pip install libsass
 
 sudo apt-get install software-properties-common
-
+```
 
 # Wkhtmltopdf
+```sh
 cd /tmp
 
 wget https://builds.wkhtmltopdf.org/0.12.1.3/wkhtmltox_0.12.1.3-1~bionic_amd64.deb
@@ -45,7 +46,7 @@ sudo apt install ./wkhtmltox_0.12.1.3-1~bionic_amd64.deb
 sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
 
 sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
-
+```
 
 
 # Odoo
