@@ -7,9 +7,12 @@ sudo passwd root
 
 
 # Preparação do Linux
+
+```sh
 sudo apt update && sudo apt upgrade
 
 sudo apt install git gcc python3-pip build-essential python3-dev python3-venv python3-wheel libxslt-dev libzip-dev libpq-dev libldap2-dev libsasl2-dev python3-setuptools python3-pypdf2
+```
 
 pip3 install Babel decorator docutils ebaysdk feedparser gevent greenlet html2text Jinja2 lxml Mako MarkupSafe mock num2words ofxparse passlib Pillow psutil psycogreen psycopg2 pydot pyparsing PyPDF2 pyserial python-dateutil python-openid pytz pyusb PyYAML qrcode reportlab requests six suds-jurko vatnumber vobject Werkzeug XlsxWriter xlwt xlrd
 
