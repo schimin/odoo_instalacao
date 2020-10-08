@@ -39,7 +39,7 @@ sudo apt-get install software-properties-common
 ```sh
 cd /tmp
 
-wget https://builds.wkhtmltopdf.org/0.12.1.3/wkhtmltox_0.12.1.3-1~bionic_amd64.deb
+wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
 
 sudo apt install ./wkhtmltox_0.12.1.3-1~bionic_amd64.deb
 
