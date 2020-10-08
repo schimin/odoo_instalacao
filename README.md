@@ -162,10 +162,14 @@ cd /opt/odoo/odoo
 
 # TROUBLESHOOTING
 
-Any error related to libfontconfig, libxrender not found then:
+# Any error related to libfontconfig, libxrender not found then:
 
 sudo apt-get -f install libxrender1 libjpeg-turbo8 libfontconfig1 fonts-dejavu-core ttf-bitstream-vera fonts-freefont-ttf gsfonts libfontenc1 libxfont1 x11-common xfonts-encodings xfonts-utils gsfonts-x11 fontconfig-config libfontconfig1 fontconfig
 
+# ModuleNotFoundError: No module named 'werkzeug.contrib'
+
+pip3 uninstall Werkzeug (will uninstall earlier version)
+pip3 install Werkzeug==0.11.15
 
 Fonte: http://www.comdesk.com.br/blog/10-instalacao-odoo-v12-no-ubuntu-18-04
 Fonte: https://www.systemsvalley.com/odoo-12-installation-on-ubuntu-18-04/
