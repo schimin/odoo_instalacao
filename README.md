@@ -151,6 +151,17 @@ createuser -s roberto
 exit
 
 
+#Virtual Env
+```
+virtualenv venv --python=python3
+source bin/activate
+```
+Para sair:
+
+```
+deactivate
+``` 
+
 
 # Iniciar Odoo
 
